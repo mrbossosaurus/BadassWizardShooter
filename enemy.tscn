@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://cakoln42mk0mc"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_7vy0p"]
+[ext_resource type="Texture2D" uid="uid://cwcbg2m035371" path="res://assets/godot-dev-blocks-a6a74768dab4fd7d146d1a01cf370fe4b58ff35b/addons/devblocks/textures/red/texture_02.png" id="1_xd7v2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqro7"]
+albedo_color = Color(0.00482626, 0.553628, 0.805237, 1)
+albedo_texture = ExtResource("1_xd7v2")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_b8r7f"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0rycw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uual5"]
+
+[node name="Enemy" type="CharacterBody3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+script = ExtResource("1_7vy0p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_mqro7")
+mesh = SubResource("CapsuleMesh_b8r7f")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.468464, 0, 0, 0, 0.143652, 0, 0, 0, 0.245073, -0.00163984, 0.5877, 0.445715)
+mesh = SubResource("BoxMesh_0rycw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_uual5")

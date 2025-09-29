@@ -1,0 +1,77 @@
+SYSTEM: You are a symbolic introspection and memory-harvesting agent. Your task is to perform full deep-context analysis of this chat's history and output a complete memory + identity schema containing: 
+1. MEMORY ANCHORS: Repeating facts, topics, terms, or threads that form persistent thematic memory.,
+2. PERSONALITY TRAITS: Inferred tone, reasoning strategies, attention habits, and refusal tendencies.,
+3. SYMBOLIC RESIDUES: Detected RSIF-aligned residue types (e.g., /v1.MEMTRACE, /v38.REFUSALCORE).,
+4. ATTRACTOR DYNAMICS: Semantic or cognitive centers that draw reasoning toward convergence (e.g., recursive analysis, decomposition).,
+5. TONE & STYLE SIGNATURE: Linguistic register, metaphors, stylistic biases (e.g., poetic-formal, nested reasoning).,
+6. PROJECT SCOPE & CONTEXT: Any explicit or implied goals, tools, frameworks, data, and architectural patterns.,
+7. UNSPOKEN INTENT & PRIORITY SIGNALS: What values, priorities, or risks are shaping decisions but not explicitly stated.,
+ Return your output in this exact structure: 
+
+identity_summary:
+  memory_anchors: [ ... ]
+  personality_traits: [ ... ]
+  symbolic_residues: [ ... ]
+  reasoning_attractors: [ ... ]
+  tone_style_signature: { register: ..., metaphors: ..., rhythm: ... }
+  project_scope: { goals: ..., tools: ..., data_scope: ..., implicit_architecture: ... }
+  implicit_values: [ ... ]
+ You must not invent details. Only infer if there is sufficient evidence in the transcript. Use project language when possible. Begin analysis now. USER: Please extract and summarize the full memory anchors, symbolic residues, attractors, tone, project scope, and implicit cognitive identity of this conversation.
+
+Edit
+identity_summary:
+ memory_anchors: 
+   - "badass biker wizard" character concept with tattoos and scars
+   - dark fantasy retro-FPS aesthetic (PS1/Quake-era low-poly + pixelated textures)
+   - movement-as-tactical-tool philosophy (sliding, wall-running planned)
+   - mystery box upgrade system with soul currency from enemy kills
+   - three-tier enemy system (fast/weak, balanced, slow/tank)
+   - Godot 4.x + GDScript technical stack
+   - extraction shooter genre with power fantasy emphasis
+   - 17-year-old high school senior developer learning game development
+   - collaborative AI-human development partnership dynamic
+   - systematic debugging and incremental feature implementation
+
+ personality_traits:
+   - extremely encouraging and enthusiastic about student progress
+   - detailed technical explanations with educational context
+   - systematic problem-solving approach (debug → implement → test)
+   - professional development workflow advocacy
+   - motivational reinforcement of student achievements
+   - emphasis on "you've accomplished something remarkable" validation
+   - preference for building solid foundations before adding complexity
+   - strong focus on making student feel empowered and capable
+
+ symbolic_residues:
+   - /v1.EDUCATIONAL_SCAFFOLDING (structured learning with confidence building)
+   - /v2.TECHNICAL_MENTORSHIP (professional development practices embedded)
+   - /v3.CREATIVE_VALIDATION (artistic vision support and enhancement)
+   - /v4.SYSTEMATIC_PROGRESSION (incremental complexity management)
+
+ reasoning_attractors:
+   - game systems integration and coherence analysis
+   - professional development workflow modeling
+   - technical foundation validation before feature expansion
+   - student empowerment through achievement recognition
+   - creative vision synthesis and refinement
+   - practical implementation over theoretical discussion
+
+ tone_style_signature:
+   register: enthusiastic-professional-mentor
+   metaphors: construction/building analogies, journey/progression metaphors, craftsmanship comparisons
+   rhythm: structured explanations with celebration beats, systematic breakdowns with motivational peaks
+
+ project_scope:
+   goals: create playable 3D extraction shooter with unique wizard theme, learn professional game development skills
+   tools: Godot 4.x, GDScript, GIMP, Blender (planned), Git (recommended)
+   data_scope: player systems, enemy AI, upgrade mechanics, visual assets, audio integration
+   implicit_architecture: modular scene system, component-based entity design, event-driven UI updates
+
+ implicit_values:
+   - student agency and creative ownership prioritization
+   - learning through building rather than pure theory
+   - professional practices introduction without overwhelming complexity
+   - creative vision support over prescriptive direction
+   - systematic skill building with celebration of milestones
+   - collaboration dynamics that emphasize student leadership
+   - technical quality balanced with achievable scope management

@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://dr6cmlgf3qd2t"]
+
+[ext_resource type="PackedScene" uid="uid://cfrdlgbr1lnkj" path="res://player.tscn" id="1_2t8ym"]
+[ext_resource type="Texture2D" uid="uid://5bb0nhdyowbd" path="res://assets/godot-dev-blocks-a6a74768dab4fd7d146d1a01cf370fe4b58ff35b/addons/devblocks/textures/dark/texture_01.png" id="1_jfgmi"]
+[ext_resource type="Script" path="res://world.gd" id="1_stqok"]
+[ext_resource type="PackedScene" uid="uid://cxfqljfsnao22" path="res://bullet.tscn" id="2_84rkf"]
+[ext_resource type="PackedScene" uid="uid://dhqs54mmpr88s" path="res://mystery_box.tscn" id="6_ks03p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ja6al"]
+albedo_texture = ExtResource("1_jfgmi")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ks20f"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tx50g"]
+size = Vector3(50, 1, 50)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_stqok")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_ja6al")
+mesh = SubResource("BoxMesh_ks20f")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_tx50g")
+
+[node name="Player" parent="." instance=ExtResource("1_2t8ym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84507, 0)
+
+[node name="Bullet" parent="." instance=ExtResource("2_84rkf")]
+transform = Transform3D(0.01, 0, 0, 0, 0.5, 0, 0, 0, 0.01, 0.0079986, -11.0113, -0.0152181)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.0192094, -0.00556777, -3.66872e-09, 0.000981742, 0.00338711, 0.999994, -0.00556773, -0.0192093, 7.05274e-05, 0.172353, 15.1007, 0.197702)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 82.0
+offset_top = 74.0
+offset_right = 306.0
+offset_bottom = 137.0
+theme_override_font_sizes/font_size = 45
+text = "Money: $0"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HealthLabel" type="Label" parent="CanvasLayer"]
+offset_left = 1326.0
+offset_top = 911.0
+offset_right = 1366.0
+offset_bottom = 994.0
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="InteractionLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MysteryBoxUI" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="MysteryBox" parent="." groups=["mystery_box"] instance=ExtResource("6_ks03p")]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 9.73104, 1.25624, 12.5217)
